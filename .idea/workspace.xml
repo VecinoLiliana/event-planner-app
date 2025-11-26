@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f31bff83-7c81-4107-8c48-f6031a8af929" name="Changes" comment="Initial commit and db config" />
+    <list default="true" id="f31bff83-7c81-4107-8c48-f6031a8af929" name="Changes" comment="Initial commit and db config">
+      <change afterPath="$PROJECT_DIR$/../event-planner-app/resources/views/layouts/include/admin/navigation.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../event-planner-app/resources/views/layouts/include/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../event-planner-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../event-planner-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../event-planner-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../event-planner-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../event-planner-app/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../event-planner-app/resources/css/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +20,28 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="PHP File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../event-planner-app" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "VecinoLiliana"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/VecinoLiliana/event-planner-app.git",
+    "accountId": "17e454d7-e8d0-437c-826b-89ba9457c235"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.14/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/league/flysystem-local" />
@@ -170,6 +195,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../event-planner-app/resources/views/layouts" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/../event-planner-app/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -191,7 +221,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764118912853</updated>
-      <workItem from="1764118914221" duration="2051000" />
+      <workItem from="1764118914221" duration="6062000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and db config">
       <option name="closed" value="true" />

@@ -1,9 +1,10 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-    <div>
+<!-- Authentication Card, para autenticación de usuarios -->
+<div class="min-h-screen flex flex-col sm:justify-center items-center p-8 bg-white">
+    <div class="mb-8">
         {{ $logo }}
     </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <!-- Contenedor de la tarjeta de autenticación -->
+    <div class="w-full sm:max-w-md px-10 md:px-12 py-8 bg-white shadow-lg overflow-hidden rounded-2xl border border-gray-200">
         {{ $slot }}
     </div>
 </div>

@@ -4,7 +4,6 @@
             <img src="{{ asset('images/LogoLoopEvents.svg') }}" class="h-7" alt="LoopEvents Logo" />
             <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">LoopEvents</span>
         </a>
-
         <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <!-- Settings Dropdown (Jetstream) -->
             <div class="ms-3 relative">

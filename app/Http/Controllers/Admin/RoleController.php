@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
@@ -71,10 +72,41 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Role $role)
     {
-        $role = Role::findOrFail($id);
-        $role->delete();
-        return redirect()->route('admin.roles.index')->with('status', 'Rol eliminado');
+        // Restringir la eliminación de roles por defecto
+        $protectedNames = ['Cliente', 'Organizador', 'Provedor'];
+
+        if (in_array($role->name, $protectedNames, true)) {
+            session()->flash('swal', [
+                'icon' => 'error',
+                'title' => 'Error',
+                'text' => 'No puedes eliminar este rol',
+            ]);
+
+            return redirect()->route('admin.roles.index');
+        }
+
+        // Limpiar relaciones en las tablas pivot de Spatie antes de eliminar el rol
+        DB::table(config('permission.table_names.model_has_roles'))
+            ->where(config('permission.column_names.role_pivot_key') ?? 'role_id', $role->id)
+            ->delete();
+
+        DB::table(config('permission.table_names.role_has_permissions'))
+            ->where(config('permission.column_names.role_pivot_key') ?? 'role_id', $role->id)
+            ->delete();
+
+        // Eliminar el rol directamente desde la tabla roles para evitar problemas con relaciones de Eloquent
+        DB::table(config('permission.table_names.roles'))
+            ->where('id', $role->id)
+            ->delete();
+
+        session()->flash('swal', [
+            'icon' => 'success',
+            'title' => 'Rol eliminado exitosamente',
+            'text' => 'El rol se ha eliminado correctamente',
+        ]);
+
+        return redirect()->route('admin.roles.index');
     }
 }

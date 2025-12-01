@@ -26,7 +26,7 @@ Route::middleware([
     })->name('admin.dashboard');
 
     // Rutas de administración (roles, etc.)
-    Route::prefix('admin')->name('admin.')->middleware(['role:admin|staff'])->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware(['role:Organizador'])->group(function () {
         // Roles
         Route::resource('roles', RoleController::class);
 

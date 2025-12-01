@@ -22,13 +22,13 @@
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 md:h-72 overflow-hidden rounded-lg">
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="https://images.pexels.com/photos/6898859/pexels-photo-6898859.jpeg?auto=compress&cs=tinysrgb&w=1200" class="block w-full h-full object-cover" alt="Evento 1">
+                        <img src="https://elolivar.es/olivar-content/uploads/2021/06/salones-para-eventos.png" class="block w-full h-full object-cover" alt="Evento 1">
                     </div>
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://images.pexels.com/photos/1181562/pexels-photo-1181562.jpeg?auto=compress&cs=tinysrgb&w=1200" class="block w-full h-full object-cover" alt="Evento 2">
+                        <img src="https://7372825.fs1.hubspotusercontent-na1.net/hubfs/7372825/53617176275_f4249d55ff_c.jpg" class="block w-full h-full object-cover" alt="Evento 2">
                     </div>
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="https://images.pexels.com/photos/7648058/pexels-photo-7648058.jpeg?auto=compress&cs=tinysrgb&w=1200" class="block w-full h-full object-cover" alt="Evento 3">
+                        <img src="https://www.protocoloimep.com/app/uploads/2016/11/evento-sostenible.png" class="block w-full h-full object-cover" alt="Evento 3">
                     </div>
                 </div>
 

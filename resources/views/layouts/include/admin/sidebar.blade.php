@@ -34,7 +34,7 @@
 <aside id="top-bar-sidebar" class="fixed top-16 sm:top-20 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-default">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center ps-2.5 mb-5">
-            <img src="{{ asset('images/LogoLoopEvents.svg') }}" class="h-6 me-3" alt="LoopEvents Logo" />
+            <img src="{{ asset('build/assets/images/LogoLoopEvents.png') }}" class="h-6 me-3" alt="LoopEvents Logo" />
             <span class="self-center text-lg text-heading font-semibold whitespace-nowrap">LoopEvents</span>
         </a>
         <ul class="space-y-2 font-medium">

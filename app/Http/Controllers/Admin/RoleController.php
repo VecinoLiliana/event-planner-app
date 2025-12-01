@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
@@ -12,8 +13,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.role.index');
+        $roles = Role::orderBy('name')->paginate(10);
+        return view('admin.roles.index', compact('roles'));
     }
 
     /**
@@ -21,8 +22,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.role.create');
+        return view('admin.roles.create');
     }
 
     /**
@@ -30,7 +30,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255', 'unique:roles,name'],
+        ]);
+        Role::create(['name' => $validated['name']]);
+        return redirect()->route('admin.roles.index')->with('status', 'Rol creado correctamente');
     }
 
     /**
@@ -38,7 +42,7 @@ class RoleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return redirect()->route('admin.roles.index');
     }
 
     /**
@@ -46,8 +50,8 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
-        return view('admin.role.edit');
+        $role = Role::findOrFail($id);
+        return view('admin.roles.edit', compact('role'));
     }
 
     /**
@@ -55,7 +59,13 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $role = Role::findOrFail($id);
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255', 'unique:roles,name,' . $role->id],
+        ]);
+        $role->name = $validated['name'];
+        $role->save();
+        return redirect()->route('admin.roles.index')->with('status', 'Rol actualizado correctamente');
     }
 
     /**
@@ -63,6 +73,8 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $role = Role::findOrFail($id);
+        $role->delete();
+        return redirect()->route('admin.roles.index')->with('status', 'Rol eliminado');
     }
 }

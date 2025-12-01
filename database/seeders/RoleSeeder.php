@@ -21,9 +21,7 @@ class RoleSeeder extends Seeder
         ];
         //Crear en la BD
         foreach ($roles as $role) {
-            Role:: create([
-                'name' => $role,
-            ]);
+            Role::firstOrCreate(['name' => $role]);
         }
     }
 }

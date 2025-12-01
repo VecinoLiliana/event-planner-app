@@ -31,15 +31,15 @@
                 <!-- Styles -->
                 @livewireStyles
             </head>
-            <body class="font-sans antialiased bg-gray-50">
+            <body class="font-sans antialiased bg-gray-50 pt-16 sm:pt-20">
 
             @include('layouts.include.admin.navigation')
             @include('layouts.include.admin.sidebar')
 
 
-            <div class="p-4 sm:ml-64">
+            <div class="p-6 sm:ml-64">
                 <!-- margen arriba de 14pix -->
-                <div class= "mt-14 flex items-center justify-between w-full">
+                <div class= "mt-16 max-w-6xl mx-auto flex items-center justify-between w-full">
                     @include('layouts.include.admin.breadcrumbs', ['breadcrumbs' => $breadcrumbs ?? []])
                     @isset($action)
                         <div class="ml-4">
@@ -47,7 +47,9 @@
                         </div>
                     @endisset
                 </div>
-                {{$slot}}
+                <div class="mt-4 max-w-6xl mx-auto">
+                    {{$slot}}
+                </div>
             </div>
 
                 @stack('modals')

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\EventController;
 
 // Redirige la página de inicio a la pantalla de login
 Route::get('/', function () {
@@ -24,7 +26,15 @@ Route::middleware([
     })->name('admin.dashboard');
 
     // Rutas de administración (roles, etc.)
-    Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware(['role:admin|staff'])->group(function () {
+        // Roles
         Route::resource('roles', RoleController::class);
+
+        // Usuarios (incluye activar)
+        Route::resource('users', UserController::class);
+        Route::put('users/{user}/activate', [UserController::class, 'activate'])->name('users.activate');
+
+        // Eventos
+        Route::resource('events', EventController::class);
     });
 });
